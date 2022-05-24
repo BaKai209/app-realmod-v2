@@ -1,21 +1,23 @@
 import React from 'react'
+import { RoomTop } from '../styles/styledComponets';
 
-const CardRoom = () => {
+const CardRoom = ({nombre, img, tipo, ubicacion, estado, baños,habitaciones,precio,tamaño}) => {
+
   return (
     <div className='cardRoom'>
-    <div className='cardRoom__top'>
-      <span className='cardRoom__span'>For Buy</span>
-      <span className='cardRoom__price'>$28,000/mo</span>
-    </div>
+    <RoomTop imagen={img}>
+      <span className='cardRoom__span'>{estado}</span>
+      <span className='cardRoom__price'>{precio}</span>
+    </RoomTop>
     <div className='cardRoom__bottom'>
-    <p className='cardRoom__title'>Study Home</p>
-    <h3 className='cardRoom__subtitle'>This is a House</h3>
-    <h4 className='cardRoom__iconBox'><img src='https://res.cloudinary.com/dke83t4p2/image/upload/v1653243573/Realmod/icons/info_icons/parking-area_1_5_p1z5hz.png' alt='Card Icon'/>Louisana, California</h4>
+    <p className='cardRoom__title'>{tipo}</p>
+    <h3 className='cardRoom__subtitle'>{nombre}</h3>
+    <h4 className='cardRoom__iconBox'><img src='https://res.cloudinary.com/dke83t4p2/image/upload/v1653243573/Realmod/icons/info_icons/parking-area_1_5_p1z5hz.png' alt='Card Icon'/>{ubicacion}</h4>
 
     <div className='cardRoom__box'>
-    <h4 className='cardRoom__iconBox'><img className='cardRoom__icon' src='https://res.cloudinary.com/dke83t4p2/image/upload/v1653243573/Realmod/icons/info_icons/parking-area_1_5_p1z5hz.png' alt='Card Icon'/> California</h4>
-    <h4 className='cardRoom__iconBox'><img className='cardRoom__icon' src='https://res.cloudinary.com/dke83t4p2/image/upload/v1653243573/Realmod/icons/info_icons/parking-area_1_5_p1z5hz.png' alt='Card Icon'/>California</h4>
-    <h4 className='cardRoom__iconBox'><img className='cardRoom__icon' src='https://res.cloudinary.com/dke83t4p2/image/upload/v1653243573/Realmod/icons/info_icons/parking-area_1_5_p1z5hz.png' alt='Card Icon'/>California</h4>
+    <h4 className='cardRoom__iconBox'><img className='cardRoom__icon' src='https://res.cloudinary.com/dke83t4p2/image/upload/v1653243573/Realmod/icons/info_icons/parking-area_1_5_p1z5hz.png' alt='Card Icon'/> {habitaciones}</h4>
+    <h4 className='cardRoom__iconBox'><img className='cardRoom__icon' src='https://res.cloudinary.com/dke83t4p2/image/upload/v1653243573/Realmod/icons/info_icons/parking-area_1_5_p1z5hz.png' alt='Card Icon'/>{baños}</h4>
+    <h4 className='cardRoom__iconBox'><img className='cardRoom__icon' src='https://res.cloudinary.com/dke83t4p2/image/upload/v1653243573/Realmod/icons/info_icons/parking-area_1_5_p1z5hz.png' alt='Card Icon'/>{tamaño}</h4>
     </div>
     </div>
   </div>

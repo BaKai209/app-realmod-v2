@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 // import CardInfo from '../components/CardInfo'
 import CardRoom from '../components/CardRoom';
+import { listAsync } from '../redux/actions/actionProducts';
 
 const CardContainer = () => {
+
+const {products} = useSelector(store => store.products)
+
+const dispatch = useDispatch()
+
+useEffect(() => {
+ dispatch(listAsync())
+}, [])
+
+console.log(products);
+
+
+
+
   return (
     <div className='infoContainer'>
         <div style={{
@@ -19,12 +35,20 @@ const CardContainer = () => {
             padding: '1rem'
         }}>Featured Listings</h2>
         </div>
-        <div className='cardRoomContainer__container'>
-            <CardRoom />
-            <CardRoom />
-            <CardRoom />
-            <CardRoom />
-            <CardRoom />
+        <div className='cardRoomContainer__container'>        
+        {products.map((product, index) =>(
+          <CardRoom key={index}
+          nombre={product.nombre}
+          img={product.imagen}
+          tipo={product.tipo}
+          estado={product.estado}
+          ubicacion={product.ubicacion}
+          baños={product.baños}
+          habitaciones={product.habitaciones}
+          precio={product.precio}
+          tamaño={product.tamaño}
+          />
+        ))}
 
         </div>
     </div>

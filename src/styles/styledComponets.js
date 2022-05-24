@@ -71,4 +71,28 @@ transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 `
+// INMUEBLES__BACKGROUND
 
+export const RoomTop = styled.div`
+background-image: url(${props=>props.imagen});
+background-repeat: no-repeat;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  color: #FFF;
+`
+
+// img agentes
+export const AgentsBackground = styled.div`
+ width: 100%;
+  background-image: url(${props=>props.img});
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 240px;
+  padding: 1re;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 0;
+`
